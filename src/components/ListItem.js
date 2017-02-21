@@ -4,16 +4,22 @@ import { CardSection } from './common';
 
 class ListItem extends Component {
   render() {
-
-    // const { title } = this.props.novels;
+    const { title } = this.props.novel;
     return (
       <CardSection>
-        <Text>
-           Fulano
+        <Text style={styles.titleStyle}>
+          {title}
         </Text>
       </CardSection>
     );
   }
 }
+
+const styles = {
+  titleStyle: {
+    fontSize: 18,
+    paddingLeft: 15
+  }
+};
 
 export default ListItem;
