@@ -7,15 +7,16 @@ import LinearGradient from 'react-native-linear-gradient';
 const myIcon = (<Icon name="copyright" size={18} color="#717171" />);
 const myIcon2 = (<Icon name="cc" size={18} color="#717171" />);
 
+
 class ListItem extends Component {
   render() {
-    const { title, image, artist } = this.props.novel;
+    const { title, albumId, url, thumbnailUrl } = this.props.novel;
     return (
       <Card>
         <CardSection>
           <Image
               style={styles.imageStyle}
-              source={{ uri: image }}
+              source={{ uri: url }}
           >
           <LinearGradient
             colors={['#818181', '#ffffff']}
@@ -29,7 +30,7 @@ class ListItem extends Component {
         <CardSection>
           <View style={styles.viewStyle}>
             <Text numberOfLines={1} style={styles.textStyle}>{myIcon} {title}</Text>
-            <Text numberOfLines={1} style={styles.textStyle}>{myIcon2} {artist}</Text>
+            <Text numberOfLines={1} style={styles.textStyle}>{myIcon2} {albumId}</Text>
           </View>
         </CardSection>
       </Card>

@@ -8,12 +8,12 @@ import Router from './Router';
 import PageOne from './components/PageOne';
 import reducers from './reducers';
 
+
+AdMobInterstitial.setTestDeviceID('EMULATOR');
+AdMobInterstitial.setAdUnitID('ca-app-pub-8356555649836141/1032680654');
+
 class App extends Component {
-
   componentDidMount() {
-    AdMobInterstitial.setTestDeviceID('EMULATOR');
-    AdMobInterstitial.setAdUnitID('ca-app-pub-8356555649836141/9541656259');
-
     AdMobInterstitial.addEventListener('interstitialDidLoad',
       () => console.log('interstitialDidLoad event'));
     AdMobInterstitial.addEventListener('interstitialDidClose',
@@ -31,6 +31,7 @@ class App extends Component {
   componentWillMount() {
     AdMobInterstitial.removeAllListeners();
   }
+
 
   render() {
     const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
