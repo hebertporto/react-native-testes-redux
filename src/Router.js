@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import PageOne from './components/PageOne';
 import PageTwo from './components/PageTwo';
+import NovelScreen from './components/NovelScreen';
 
 const RouterComponent = () => {
   return (
@@ -30,6 +31,16 @@ const RouterComponent = () => {
          sceneStyle={styles.MainScreen}
          leftButtonIconStyle={{ tintColor: 'white' }}
          renderRightButton={this.renderMenuButton}
+       />
+       <Scene
+         key='NovelScreen'
+         component={NovelScreen}
+         title='Novel Screen'
+         titleStyle={styles.titleStyle}
+         navigationBarStyle={styles.navigationBarStyle}
+         leftButtonIconStyle={{ tintColor: 'white' }}
+         renderRightButton={this.renderMenuButton}
+         hideNavBar={false}
        />
     </Router>
   );

@@ -3,5 +3,6 @@ import NovelReducer from './NovelReducer';
 
 export default combineReducers({
       default: () => [],
-      novels: NovelReducer
+      novels: NovelReducer,
+      chapters: NovelReducer
 });
